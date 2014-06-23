@@ -1,0 +1,31 @@
+<div class="col-sm-2">
+	<img ng-src="{{getGravatarURL(user.email)}}" alt="Profile image" class="responsive">
+</div>
+<div class="col-sm-4 col-sm-offset-1">
+	<form name="editProfileForm" role="form">
+		<legend>Edit user</legend>
+	
+		<div class="form-group">
+			<label for="username">Username</label>
+			<input type="text" class="form-control" id="username" ng-model="user.username" name="uUsername" placeholder="Input user name">
+			{{user.username}}
+
+			<label for="password">Password</label>
+			<input type="password" class="form-control" id="password" ng-model="user.password" name="uPassword" placeholder="Input password">
+		</div>
+	
+		<div class="form-group">
+			<label for="name">Name</label>
+			<input type="text" class="form-control" id="name" ng-model="user.name" name="uName" placeholder="Input name">
+
+			<label for="email">Email</label>
+			<input type="email" class="form-control" id="email" ng-model="user.email" name="uEmail" placeholder="Input email">
+
+			<label for="bio">Bio</label>
+			<textarea class="form-control" id="bio" ng-model="user.bio" name="uBio" placeholder="Input bio"></textarea>
+		</div>
+		
+		<button type="button" class="btn btn-default">Cancle</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>

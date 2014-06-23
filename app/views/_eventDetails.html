@@ -1,0 +1,67 @@
+<div class="container">
+  <img ng-src="{{event.img}}" alt="{{event.name}}" class="img-responsive">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>{{event.name}}</h1>
+    </div>
+    
+    <div class="col-sm-2">
+      <p>{{event.date}}</p>
+      <p>{{event.time}}</p>
+    </div>
+    
+    <div class="col-sm-3 col-sm-offset-1">
+      <p>{{event.location.address}}</p>
+      <p>{{event.location.city}}, {{event.location.province}}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>Sessions <small>at {{event.name}}</small></h2>
+      <div class="list-group">
+        <select name="sessionSort" ng-model="sortOrder" class="list-group-item col-sm-3 col-sm-offset-62 
+            col-md-3 sortBox">
+          <option value="name">Sort by name</option>
+          <option value="-votes">Sort by votes</option>
+        </select>
+
+        <select name="levelSort" ng-model="query.level" class="list-group-item col-sm-2 
+            col-md-3 sortBox">
+          <option value="">All</option>
+          <option value="easy">Introductory</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </div>
+
+      <ul class="list-group">
+        <li class="list-group-item session col-sm-5 col-sm-offset-6 col-sm-pull-6 col-md-6" 
+          ng-repeat="sess in event.sessions | orderBy:sortOrder | filter:query | limitTo: 3">
+            <div class="upvoteWidget">
+              <span class="glyphicon glyphicon-chevron-up" ng-click="voteUp(sess, event)"></span>
+              <span class="glyphicon glyphicon-chevron-down" ng-click="voteDown(sess)"></span>
+            </div> 
+       <!--     <div class="well votingWidget col-xs-1">
+              <div class="votingButton" ng-click="voteUp(sess)">
+                <i class="glyphicon glyphicon-chevron-up"></i>
+              </div>  
+              <div class="badge">
+                <div>{{sess.votes}}</div>
+              </div>
+              <div class="votingButton" ng-click="voteDown(sess)">
+                <i class="glyphicon glyphicon-chevron-down"></i>
+              </div>  
+            </div>
+        -->    
+            <h3 class="list-group-item-heading">
+              <a href="" class="">{{sess.name}}</a> <small>({{sess.votes}} votes)</small>
+            </h3>
+            <p class="list-group-item-text "><strong>Duration:</strong> {{sess.duration  | durationFilter}}</p>
+            <p class="list-group-item-text">{{sess.abstract}}</p>
+            <p class="list-group-item-text" ng-bind-html="sess.level | levelFilter"></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

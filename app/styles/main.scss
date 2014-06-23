@@ -1,0 +1,164 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+
+@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+
+html { font-size: 62.5%; } 
+body { font-size: 14px; font-size: 1.4rem; } /* =14px */
+h1   { font-size: 24px; font-size: 2.4rem; } /* =24px */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/*hide unbound html until angular is loaded*/
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+/* Space out content a bit */
+body {
+    padding-top: 90px;
+    padding-bottom: 20px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+    margin: 40px 0;
+}
+
+.marketing p + h4 {
+    margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+}
+
+/* Custom styles */
+.session {
+    user-select: none;
+    cursor: default;
+}
+
+.session:hover, .session:focus{
+    background-color: $gray-lighter;
+}
+
+.session:hover .upvoteWidget  .glyphicon, 
+.session:focus .upvoteWidget  .glyphicon{
+    color: $gray-light;
+}
+
+.session:hover .upvoteWidget  .glyphicon:hover, 
+.session:focus .upvoteWidget  .glyphicon:hover{
+    color: $gray;
+}
+
+.upvoteWidget .glyphicon{
+    font-size: 1.4em;
+    color: $gray-lighter;
+} 
+
+.upvoteWidget .glyphicon:hover{
+    color: $gray-dark;
+    cursor: pointer;
+} 
+/*
+.votingWidget {
+    height: 64px;
+    padding: 7px;
+}
+
+.votingButton {
+    padding-left: 6px;
+    cursor: pointer;
+}*/
+
+.sortBox {
+    background-color: $gray-lighter;
+    border: none;
+    box-shadow: none;
+}
+
+.sortBox {
+    border: none;
+    outline-color: transparent;
+}
+
+.sortBox {
+    outline-color: $gray-lighter;
+}
+
+input.ng-dirty.ng-invalid {
+    background-color: mistyrose; 
+}
+
+label em {
+    font-style: normal;
+    font-weight: normal;
+}
